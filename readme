@@ -1,0 +1,42 @@
+1. Descripción:
+RECLUTA es un juego en el que el jugador tiene que matar a los terroristas que vienen de frente mediante disparos. 
+
+2. MVP:
+El recluta encuentra de frente a un terrorista que muere de 1 disparo. Si el terrorista llega al recluta lo mata.
+El recluta encuentra de frente a un terrorista -terrorista2- que muere de 2 disparos. Si el terrorista llega al recluta lo mata.
+El recluta, además de matar terroristas, tiene que saltar hoyos en el suelo que contienen pinchos que lo matan si cae dentro.
+
+3. Reserva:
+Añadir música de splash screen y de inicio de partida.
+Añadir música de ambiente bélico y efectos de sonido a las armas y saltos durante la partida.
+Añadir que el terrorista dispara y el recluta tiene que saltar los disparos.
+Añadir elementos que el recluta encuentra y hacen mejorar su armamento.
+Animación de correr del recluta
+
+4. Estructura de datos para MVP:
+- IMG folder:
+*background
+*gameover
+*logo
+*recluta corriendo
+*terrorista corriendo
+*recluta disparando
+*terrorista disparando
+
+- JS folder:
+*main
+*game
+*recluta
+*enemigo1
+
+- Styles CSS
+- index.html
+
+5. Enlaces
+
+*GitHub
+*Heroku
+
+
+
+
