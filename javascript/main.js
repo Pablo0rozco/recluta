@@ -9,8 +9,9 @@ const gameOverScreen = document.querySelector("#gameover-screen")
 const canvas = document.querySelector("#my-canvas"); // accedemos al canvas DOM
 const ctx = canvas.getContext("2d"); // conectado a 2.2.1 borrar canvas, primero necesitamos esto
 let game; // creo la variable fuera de la función para que sea global, dentro de la función no se puede llamar
-let mainMusic = new Audio ("../sounds/musicajuego.mp3");
-let reclutaDead = new Audio ("../sounds/reclutamuerte.wav");
+let mainMusic = new Audio ("./sounds/musicajuego.mp3");
+mainMusic.volume = 0.5;
+let reclutaDead = new Audio ("./sounds/reclutamuerte.mp3");
 
 
 
@@ -23,6 +24,7 @@ const startGame = () => {
   canvas.style.display = "block"; //1.4.3
   // gameOverScreen.style.display = "none";   
   mainMusic.preload = "auto"; 
+  reclutaDead.preload = "auto"; 
   mainMusic.play();
 
   gameOverScreen.style.display = "none"
@@ -57,12 +59,14 @@ const startGame = () => {
 startBtn.addEventListener("click", startGame); // 1.3 Primero declaramos la funcion startGame y luego arriba la creamos.
 restartBtn.addEventListener("click", startGame);
 // startBtn.addEventListener("click", soundInicio);
+
 window.addEventListener("keydown", (event) => {
   game.recluta.jumpRecluta(event)
 });
-// window.addEventListener("keyup", keyUpGround);
 
 
+window.addEventListener("keydown", (event) => {
+  // el usuario presiona ESPACIO -> se crea una nueva bala
+  game.addNewBalas(event); 
+})
 
-// restartBtn.addEventListener("click", startGame);
-// window.addEventListener("keydown", keyPress);

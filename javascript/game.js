@@ -15,7 +15,14 @@ class Game {
     this.bombArr = [ new Bomb() ];
     this.terroristaArr = [];
     this.isGameOn = true;
+    this.balaArr = []
+    this.timer = 0;
+  }
 
+ 
+  addNewBalas = (event) => {   
+    if (event.code === "Space")
+    {this.balaArr.push( new Bala(this.recluta.x + 45, this.recluta.y + 15))}    
   }
 
   addNewBombs = () => {
@@ -35,6 +42,7 @@ class Game {
       this.recluta.h + this.recluta.y > eachBomb.y) {
       // collision detected!
       reclutaDead.play();
+      reclutaDead.volume = 0.3;
       this.isGameOn = false;
       canvas.style.display = "none";
       mainMusic.pause();
@@ -55,6 +63,7 @@ class Game {
   gameLoop = () => {
 
     //console.log("juego andando")
+    this.timer = this.timer 
 
     // 2.2.1 Borrar canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -74,6 +83,18 @@ class Game {
       this.bombArr.forEach((eachBomb) => {
         eachBomb.drawBomb()
       })
+
+      //BALA
+      
+      this.balaArr.forEach((eachBala) => {        
+        eachBala.drawBala()
+      })
+
+      this.balaArr.forEach((eachBala) => {
+        eachBala.moveBala()
+      })
+
+      
 
     //MOVIMIENTOS DE LOS ELEMENTOS DEL JUEGO
 
@@ -95,10 +116,6 @@ class Game {
 
       this.gameOverBombCollision()
 
-
-
-
-
    
 
     //2.2.4 control y recursividad
@@ -112,98 +129,3 @@ class Game {
 
 
 
-
-
-
-// class Game {
-//     constructor() {
-//       // todas nuestras propiedades del juego
-//       // empezamos con el fondo del canvas
-//       this.bg = new Image();
-//       this.bg.src = "./images/bg.png"; // quiza lo modifiquemos
-//       this.pollo = new Pollo();
-//       this.pipeArr = [new Pipe(0, "./images/obstacle_top.png")];
-//       this.isGameOn = true;
-//     }
-  
-//     gameOverCollision = () => {
-//       // de cada pipe, checkear si colisiona con el pollo
-  
-//       this.pipeArr.forEach((eachPipe) => {
-//         if (
-//           this.pollo.x < eachPipe.x + eachPipe.w &&
-//           this.pollo.x + this.pollo.w > eachPipe.x &&
-//           this.pollo.y < eachPipe.y + eachPipe.h &&
-//           this.pollo.h + this.pollo.y > eachPipe.y
-//         ) {
-//             console.log("PRUEBA POLLITO")
-//           // collision detected!
-//           // finalizar el juego
-//           //1. el juego se detiene
-//           this.isGameOn = false;
-//           //2. el canvas desparece
-//           canvas.style.display = "none";
-//           // 3. la pantalla final aparece
-//           gameOverScreen.style.display = "flex";
-//           this.color("green");
-//         } 
-//       });
-//     };
-  
-//     addNewPipes = () => {
-//       // condicionar cuando aparecen los nuevos pipes
-//       // let newPipe = new Pipe()
-//       // this.pipeArr.push(newPipe)
-//       // console.log(this.pipeArr[0])
-//       if (this.pipeArr[this.pipeArr.length - 1].x < 400) {
-//         // aparecer
-  
-//         let randomPositionChange = Math.random() * -90;
-  
-//         // este es el pipe de arriba
-//         let newPipe = new Pipe(randomPositionChange, "./images/obstacle_top.png");
-//         this.pipeArr.push(newPipe);
-  
-//         // este es el pipe de abajo
-//         let newPipeDown = new Pipe(
-//           randomPositionChange + 375,
-//           "./images/obstacle_bottom.png"
-//         );
-//         this.pipeArr.push(newPipeDown);
-//       }
-  
-//       // IMPORTANTE, NO OLVIDARNOS DE REMOVER LOS PIPES
-//     };
-  
-//     // todos los metodos que regulan este juego
-  
-//     gameLoop = () => {
-//       console.log("Juego andando");
-  
-//       // 1. borrar el canvas
-//       ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-//       // 2. acciones o movimiento de los elementos
-//       this.pollo.gravityPollo();
-//       this.pipeArr.forEach((eachPipe) => {
-//         eachPipe.movePipe();
-//       });
-  
-//       this.gameOverCollision();
-//       this.addNewPipes();
-  
-//       // 3. dibujar los elementos
-//       ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
-//       this.pollo.drawPollo();
-  
-//       this.pipeArr.forEach((eachPipe) => {
-//         eachPipe.drawPipe();
-//       });
-  
-//       // 4. control y recursividad
-//       if (this.isGameOn) {
-//         requestAnimationFrame(this.gameLoop);
-//       }
-//     };
-//   }
-  
