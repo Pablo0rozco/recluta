@@ -34,12 +34,12 @@ class Game {
       this.recluta.y < eachBomb.y + eachBomb.h &&
       this.recluta.h + this.recluta.y > eachBomb.y) {
       // collision detected!
-      console.log("colisionando")   
+      reclutaDead.play();
       this.isGameOn = false;
       canvas.style.display = "none";
       mainMusic.pause();
       mainMusic.currentTime = 0;
-      gameOverScreen.style.display = "block";
+      gameOverScreen.style.display = "flex";
       
     } 
   })

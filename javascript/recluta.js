@@ -9,7 +9,7 @@ class Recluta {
     this.h = 65;
     this.img = new Image()
     this.img.src = "./images/recluta1.png"
-    this.speedRight = 0;
+    this.speedRight = 0.1;
     this.jumpHeight = 100; 
     this.ground = 190;
     this.gravitySpeed = 1;

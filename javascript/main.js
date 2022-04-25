@@ -3,12 +3,14 @@
 //console.log("probandooo") PASO 0: comprobamos Conexion
 
 const startBtn = document.querySelector("#start-btn"); // acceder botón START--->DOM
+const restartBtn = document.querySelector("#restart-btn")
 const startScreen = document.querySelector("#splash-screen"); // acceder pantalla inicial--->DOM
 const gameOverScreen = document.querySelector("#gameover-screen")
 const canvas = document.querySelector("#my-canvas"); // accedemos al canvas DOM
 const ctx = canvas.getContext("2d"); // conectado a 2.2.1 borrar canvas, primero necesitamos esto
 let game; // creo la variable fuera de la función para que sea global, dentro de la función no se puede llamar
 let mainMusic = new Audio ("../sounds/musicajuego.mp3");
+let reclutaDead = new Audio ("../sounds/reclutamuerte.wav");
 
 
 
@@ -22,6 +24,10 @@ const startGame = () => {
   // gameOverScreen.style.display = "none";   
   mainMusic.preload = "auto"; 
   mainMusic.play();
+
+  gameOverScreen.style.display = "none"
+
+
   game = new Game();
   game.gameLoop()
 
@@ -49,6 +55,7 @@ const startGame = () => {
 
 // //1.1 agregamos un add event listener para el click del botón START de la pantalla inicial
 startBtn.addEventListener("click", startGame); // 1.3 Primero declaramos la funcion startGame y luego arriba la creamos.
+restartBtn.addEventListener("click", startGame);
 // startBtn.addEventListener("click", soundInicio);
 window.addEventListener("keydown", (event) => {
   game.recluta.jumpRecluta(event)
