@@ -6,7 +6,7 @@ class Bomb {
         this.h = 15;
         this.img = new Image();
         this.img.src = "./images/bomb.png"
-        this.speed = 1;
+        this.speed = 3;
     }
 
     // Dibujar la bomba

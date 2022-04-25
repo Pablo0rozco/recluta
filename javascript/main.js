@@ -7,11 +7,17 @@ const restartBtn = document.querySelector("#restart-btn")
 const startScreen = document.querySelector("#splash-screen"); // acceder pantalla inicial--->DOM
 const gameOverScreen = document.querySelector("#gameover-screen")
 const canvas = document.querySelector("#my-canvas"); // accedemos al canvas DOM
+
 const ctx = canvas.getContext("2d"); // conectado a 2.2.1 borrar canvas, primero necesitamos esto
 let game; // creo la variable fuera de la función para que sea global, dentro de la función no se puede llamar
-let mainMusic = new Audio ("./sounds/musicajuego.mp3");
+let mainMusic = new Audio ("./sounds/musicajuego3.mp3");
 mainMusic.volume = 0.5;
 let reclutaDead = new Audio ("./sounds/reclutamuerte.mp3");
+reclutaDead.volume = 0.5;
+let readyMusic = new Audio ("./sounds/allteamready.wav");
+readyMusic.volume = 0.5;
+let disparoSound = new Audio ("../sounds/disparo.mp3")
+disparoSound.volume = 0.5;
 
 
 
@@ -26,6 +32,10 @@ const startGame = () => {
   mainMusic.preload = "auto"; 
   reclutaDead.preload = "auto"; 
   mainMusic.play();
+  readyMusic.preload = "auto";
+  readyMusic.play();
+  
+
 
   gameOverScreen.style.display = "none"
 

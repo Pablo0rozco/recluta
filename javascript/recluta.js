@@ -40,6 +40,5 @@ class Recluta {
     if (this.y < this.ground)
     this.y = this.y + this.gravitySpeed;
   } 
-
   
 }

@@ -17,12 +17,16 @@ class Game {
     this.isGameOn = true;
     this.balaArr = []
     this.timer = 0;
+    this.bombJumped = 0;
   }
 
  
   addNewBalas = (event) => {   
-    if (event.code === "Space")
-    {this.balaArr.push( new Bala(this.recluta.x + 45, this.recluta.y + 15))}    
+      if (event.code === "Space") {
+      this.balaArr.push( new Bala(this.recluta.x + 45, this.recluta.y + 15))
+      disparoSound.play();
+      disparoSound.volume = 0.1;
+    }    
   }
 
   addNewBombs = () => {
@@ -33,6 +37,17 @@ class Game {
       this.bombArr.push(newBomb)
     }
   }  
+
+  contadorBombaSaltada = () => {    
+    this.bombArr.forEach((eachBomb) => {
+      if (this.recluta.x < eachBomb.x + eachBomb.w &&
+        this.recluta.x + this.recluta.w > eachBomb.x) {
+        this.bombJumped++;
+        canvas.style.display = "block";
+        this.isGameOn = true;        
+      }
+    })    
+  }
 
   gameOverBombCollision = () => {  
   this.bombArr.forEach((eachBomb) => {
@@ -111,6 +126,9 @@ class Game {
       })   
 
       this.addNewBombs()
+
+      this.contadorBombaSaltada()
+      document.getElementById("contador-bombas-saltadas").innerHTML = this.bombJumped;
 
       // COLISIONES
 
