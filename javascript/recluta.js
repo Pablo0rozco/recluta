@@ -3,52 +3,43 @@
 class Recluta {
 
   constructor() {
-    this.x = 70;
-    this.y = 215;
-    this.w = 60;
-    this.h = 60;
+    this.x = 80;
+    this.y = 190;
+    this.w = 50;
+    this.h = 65;
     this.img = new Image()
-    this.img.src = "./images/soldier1.gif"
+    this.img.src = "./images/recluta1.png"
+    this.speedRight = 0;
+    this.jumpHeight = 100; 
+    this.ground = 190;
+    this.gravitySpeed = 1;
   }
 
-  // metodos del recluta
+  // MÉTODOS DEL RECLUTA
+
+  // Dibujarlo en la posición elegida
+  drawRecluta = () => {
+    ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
+  }
+
+  // Hacer que se desplace a través del eje X hacia la derecha
+  walkRightRecluta = () => {
+    this.x = this.x + this.speedRight; 
+    console.log(this.y)   
+  }
+
+  // Hacer que salte una cantidad de pixels determinada
+  jumpRecluta = (event) => {
+    if (event.code === "ControlLeft" && this.y === this.ground) {
+      this.y = this.y - this.jumpHeight;
+    }            
+  } 
+
+  // Darle gravedad para cuando salte vuelva al suelo
+  gravityRecluta = () => {        
+    if (this.y < this.ground)
+    this.y = this.y + this.gravitySpeed;
+  } 
+
+  
 }
-
-
-
-
-
-
-// class Pollo {
-//     constructor() {
-//       // multiples propiedades del pollo
-//       this.x = 40; //posicion eje X
-//       this.y = 40; // posicion eje y
-//       this.w = 50; //ancho (width)
-//       this.h = 40; //alto (height)
-//       this.img = new Image();
-//       this.img.src = "./images/soldier1.png";
-//       this.speed = 2;
-//       this.jumpSpeed = 30;
-//     }
-  
-//     // METODOS DEL POLLO
-  
-//     drawPollo = () => {
-//       ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-//     };
-  
-//     // metodo para hacer que el pollo se mueva hacia abajo
-//     gravityPollo = () => {
-//       console.log("pollito bajando");
-  
-//       // mover pollito abajo
-//       this.y = this.y + this.speed;
-//     };
-  
-//     jumpPollo = () => {
-//       // subir la posición del pollo en x cantidad
-//       this.y = this.y - this.jumpSpeed;
-//     };
-//   }
-  

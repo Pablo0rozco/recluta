@@ -1,24 +1,16 @@
 //------------- // * GLOBAL VARIABLES
-console.log("probandooo") // PASO 0: comprobamos Conexion
 
-// // necesitamos acceder al boton de inicio START! PASO 1
-const startBtn = document.querySelector("#start-btn"); //1.1 acceder al botón START ---> DOM
-const startScreen = document.querySelector("#splash-screen"); // 1.2 acceder pantalla inicial ---> DOM
-const canvas = document.querySelector("#my-canvas"); // 1.4.2 accdemos al canvas DOM
+//console.log("probandooo") PASO 0: comprobamos Conexion
+
+const startBtn = document.querySelector("#start-btn"); // acceder botón START--->DOM
+const startScreen = document.querySelector("#splash-screen"); // acceder pantalla inicial--->DOM
+const gameOverScreen = document.querySelector("#gameover-screen")
+const canvas = document.querySelector("#my-canvas"); // accedemos al canvas DOM
 const ctx = canvas.getContext("2d"); // conectado a 2.2.1 borrar canvas, primero necesitamos esto
-
-// const restartBtn = document.querySelector("#restart-btn");
-
-// // necesitamos acceder a la pantalla inicial splash-screen es el termino habitual para pantalla de inicio
-// 
-// const gameOverScreen = document.querySelector("#gameover-screen");
-
-// // acceder al DOM canvas
+let game; // creo la variable fuera de la función para que sea global, dentro de la función no se puede llamar
+let mainMusic = new Audio ("../sounds/musicajuego.mp3");
 
 
-
-
-// let game;
 
 //------------ // * STATE MANAGEMENT FUNCTIONS
 
@@ -27,12 +19,12 @@ const startGame = () => {
   console.log("iniciando juego");
   startScreen.style.display = "none"; //1.4.1 
   canvas.style.display = "block"; //1.4.3
-  // gameOverScreen.style.display = "none";
-
-  
-
-  let game = new Game();
+  // gameOverScreen.style.display = "none";   
+  mainMusic.preload = "auto"; 
+  mainMusic.play();
+  game = new Game();
   game.gameLoop()
+
   // game.gameLoop();
 };
 
@@ -44,9 +36,26 @@ const startGame = () => {
 //   }
 // };
 
+
+// const keyPressJump = (event) => {
+//   if (event.code === "ControlLeft") {    
+//     game.recluta.jumpRecluta();
+//   }
+// }
+
+
+
 //----------------// * ADD EVENT LISTENERS
 
-// //1.1 agregamos un add event listener
-startBtn.addEventListener("click", startGame); // 1.3 implementamos la funcionalidad del botón START. Primero declaramos la funcion y luego más arriba la creamos.
+// //1.1 agregamos un add event listener para el click del botón START de la pantalla inicial
+startBtn.addEventListener("click", startGame); // 1.3 Primero declaramos la funcion startGame y luego arriba la creamos.
+// startBtn.addEventListener("click", soundInicio);
+window.addEventListener("keydown", (event) => {
+  game.recluta.jumpRecluta(event)
+});
+// window.addEventListener("keyup", keyUpGround);
+
+
+
 // restartBtn.addEventListener("click", startGame);
 // window.addEventListener("keydown", keyPress);
