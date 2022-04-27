@@ -151,3 +151,20 @@ body {
     font-family: VT323;
     font-size: 10px;  
   }
+
+  #tanqueKilled {
+    
+    display: inline;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: flex;   
+    flex-direction: justify;    
+    text-align: center; 
+    width: 100px;      
+    height: 50px;
+    border: 1px solid black;  
+    background-color: aliceblue;
+    font-family: VT323;
+    font-size: 10px;  
+  }

@@ -12,6 +12,7 @@ class Recluta {
     this.jumpHeight = 70;
     this.ground = 190;
     this.gravitySpeed = 1;
+    this.displacementSpeed = 5;
   }
 
  
@@ -31,6 +32,20 @@ class Recluta {
       this.y = this.y - this.jumpHeight;
     }
   };
+
+  moveRight = (event) => {
+    if (event.code === "ArrowRight") {
+      this.x = this.x + this.displacementSpeed;
+    }
+  };
+
+  moveLeft = (event) => {
+    if (event.code === "ArrowLeft") {
+      this.x = this.x - this.displacementSpeed;
+    }
+  };
+
+
 
   
   gravityRecluta = () => {

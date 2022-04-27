@@ -42,3 +42,11 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("keydown", (event) => {
   game.addNewBalas(event);
 });
+
+window.addEventListener("keydown", (event) => {
+  game.recluta.moveRight(event);
+});
+
+window.addEventListener("keydown", (event) => {
+  game.recluta.moveLeft(event);
+});
