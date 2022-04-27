@@ -18,7 +18,7 @@ body {
   }
   
   #my-canvas {
-    background-color: darkgray;    
+    background-color: darkgray;        
   }
 
  
@@ -103,14 +103,51 @@ body {
   }
 
 
-  #bombsJumped {
-    position: absolute;
+  #bombsJumped {  
+    display: inline;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: flex;   
+    flex-direction: justify;    
+    text-align: center; 
+    width: 100px;      
+    height: 50px;
+    border: 1px solid black;  
+    background-color: aliceblue;
     font-family: VT323;
-    font-size: 10px;
-    position: flex;
-    text-align: center;
-    left: 150px;
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;    
+    font-size: 10px;  
+  }
+
+  #terrorKilled {
+    display: inline;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: flex;   
+    flex-direction: justify;    
+    text-align: center; 
+    width: 100px;      
+    height: 50px;
+    border: 1px solid black;  
+    background-color: aliceblue;
+    font-family: VT323;
+    font-size: 10px;  
+  }
+
+  #dineroGanado {
+    
+    display: inline;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: flex;   
+    flex-direction: justify;    
+    text-align: center; 
+    width: 100px;      
+    height: 50px;
+    border: 1px solid black;  
+    background-color: aliceblue;
+    font-family: VT323;
+    font-size: 10px;  
   }
