@@ -10,8 +10,8 @@ let game;
 let mainMusic = new Audio("./sounds/musicajuego3.mp3");
 let reclutaDead = new Audio("./sounds/reclutamuerte.mp3");
 let readyMusic = new Audio("./sounds/allteamready.wav");
-let disparoSound = new Audio("../sounds/disparo.mp3");
-let terroristaMuerto = new Audio("../sounds/terroristamuriendo.mp3");
+let disparoSound = new Audio("./sounds/disparo.mp3");
+let terroristaMuerto = new Audio("./sounds/terroristamuriendo.mp3");
 
 //------------ // * STATE MANAGEMENT FUNCTIONS
 

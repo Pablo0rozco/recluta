@@ -5,7 +5,7 @@ class Bala {
     this.w = 10;
     this.h = 5;
     this.img = new Image();
-    this.img.src = "../images/baladorada.png";
+    this.img.src = "./images/baladorada.png";
     this.speed = 1;
   }
 
