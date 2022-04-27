@@ -1,12 +1,12 @@
 class Tanque {
     constructor(xParam) {
       this.x = xParam;
-      this.y = 175;
-      this.w = 120;
-      this.h = 130;
+      this.y = 160;
+      this.w = 150;
+      this.h = 110;
       this.img = new Image();
       this.img.src = "./images/tanque.png";
-      this.speed = 1;
+      this.speed = 2;
     }
    
     drawTanque = () => {

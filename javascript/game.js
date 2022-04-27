@@ -22,7 +22,7 @@ class Game {
 
     this.contadorScore = 0; // contado de dinero
 
-    this.tanqueArr = [new Tanque(canvas.width + 500)];
+    this.tanqueArr = [new Tanque(canvas.width + 400)];
     this.countTanque = 1;
     this.maxTanques = 2;
     this.countDeadTanques = 0;
@@ -54,7 +54,8 @@ class Game {
     //condicionar cuando aparecen los nuevos
     if (this.countTerrorist < this.maxTerrorist) {
       //aparecer
-      let newTerrorista = new Terrorista(canvas.width + 30 * this.countTerrorist); //parametro aparicion nuevo terrorista
+      let speedParam = Math.floor(Math.random() * 4 + 2);
+      let newTerrorista = new Terrorista((canvas.width + 30 * this.countTerrorist), speedParam); //parametro aparicion nuevo terrorista
       this.terroristaArr.push(newTerrorista);
       this.countTerrorist++;
     }
@@ -73,7 +74,7 @@ class Game {
 
   //TANQUES
   addNewTanques = () => {
-    if (this.countTanque < this.maxTanques) {
+    if (this.countTanque < this.maxTanques || this.countTanque.length === 0) {
       let newTanque = new Tanque(canvas.width + 500);
       this.tanqueArr.push(newTanque);
       this.countTanque++;
@@ -187,10 +188,10 @@ class Game {
           eachBala.y < eachTanque.y + eachTanque.h &&
           eachBala.h + eachBala.y > eachTanque.y
         ) {
-          // bala y terrorista desaparezcan
+          // bala y tanque desaparezcan
           this.balaArr.splice(ib, 1); // remover la bala del array
-          this.tanqueArr.splice(it, 1); //remover el terrorista del array
-          this.maxTanques--; // restar el contador de terroristas activos in game
+          this.tanqueArr.splice(it, 1); //remover el tanque del array
+          this.maxTanques--; // restar el contador de tanques activos in game
           this.countBalas--; // restar el contador de balas in game
           this.countDeadTanques++; //contar los tanques muertos
           this.contadorScore = this.contadorScore + 100;
@@ -199,7 +200,7 @@ class Game {
     });
   };
 
-  //-------_GAMELOOP---------------//
+  //-------GAMELOOP---------------//
 
   gameLoop = () => {
     //Borrar canvas
@@ -273,13 +274,14 @@ class Game {
       this.countDeadTerrorist;
     document.getElementById("contador-bombas-saltadas").innerHTML =
       this.bombJumped;
-    document.getElementById("contador-dinero-ganado").innerHTML = this.countDeadTanques;
+    document.getElementById("contador-tanques-destruidos").innerHTML = this.countDeadTanques;
 
     // COLISIONES
     this.gameOverBombCollision();
     this.gameOverTerroristaCollision();
     this.balaTerroristaCollision();
     this.gameOverTanqueCollision();
+    this.balaTanqueCollision();
 
     //2.2.4 control y recursividad
     if (this.isGameOn) {

@@ -1,12 +1,12 @@
 class Terrorista {
-  constructor(xParam) {
+  constructor(xParam, SpeedParam) {
     this.x = xParam;
     this.y = 195;
     this.w = 60;
     this.h = 65;
     this.img = new Image();
     this.img.src = "./images/terrorista1.png";
-    this.speed = 3;
+    this.speed = SpeedParam;
   }
  
   drawTerrorista = () => {

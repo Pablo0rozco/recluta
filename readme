@@ -1,9 +1,9 @@
 1. Descripción:
-RECLUTA es un juego en el que el jugador tiene que matar a los terroristas que vienen de frente mediante disparos. 
+RECLUTA es un juego en el que el jugador tiene que destruir enemigos -terroristas y tanques- que vienen de frente mediante disparos, además de saltar bombas.
 
 2. MVP:
 El recluta encuentra de frente a un terrorista que muere de 1 disparo. Si el terrorista llega al recluta lo mata. 
-El recluta encuentra de frente a un terrorista -terrorista2- que muere de 2 disparos. Si el terrorista llega al recluta lo mata.
+El recluta encuentra de frente un tanque que muere de 2 disparos. Si el tanque llega al recluta lo mata.
 El recluta, además de matar terroristas, tiene que saltar bombas en el suelo.
 
 3. Reserva:
