@@ -1,5 +1,6 @@
 class Game {
   constructor() {
+    // this.playerName = ""
     this.isGameOn = true; // booleano para apagar encender juego
     this.bg = new Image();
     this.bg.src = "./images/background.jpg";
@@ -69,7 +70,7 @@ class Game {
       this.balaArr.push(new Bala(this.recluta.x + 45, this.recluta.y + 15)); // parametro de aparicion de nueva bala punta del arma
       disparoSound.play();
       disparoSound.currentTime = 0;
-      disparoSound.volume = 0.01;
+      disparoSound.volume = 0.05;
       this.countBalas++;
     }
   };
@@ -287,6 +288,7 @@ class Game {
     document.getElementById("contador-bombas-saltadas").innerHTML =
       this.bombJumped;
     document.getElementById("contador-tanques-destruidos").innerHTML = this.countDeadTanques;
+    // document.getElementById("cajainput").innerHTML = this.playerName;
 
     // COLISIONES
     this.gameOverBombCollision();

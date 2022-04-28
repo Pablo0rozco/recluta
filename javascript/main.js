@@ -21,10 +21,10 @@ const startGame = () => {
   mainMusic.preload = "auto";
   reclutaDead.preload = "auto";
   mainMusic.play();
-  mainMusic.volume = 0.40;
+  mainMusic.volume = 0.1;
   readyMusic.preload = "auto";
   readyMusic.play();
-  readyMusic.volume = 0.25;
+  readyMusic.volume = 0.1;
   gameOverScreen.style.display = "none";
   game = new Game();
   game.gameLoop();

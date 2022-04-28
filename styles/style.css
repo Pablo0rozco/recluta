@@ -18,7 +18,8 @@ body {
   }
   
   #my-canvas {
-    background-color: darkgray;        
+    background-color: darkgray;    
+
   }
 
  
@@ -104,14 +105,13 @@ body {
     flex-direction: row;
     align-items: center;
     align-content: space-between;
-    position: absolute;
-    
+    position: absolute;   
 
   }
   
+  
   #my-canvas, #gameover-screen {
-    display: none;  
-    
+    display: none;      
   }
 
   #my-canvas {
@@ -120,6 +120,7 @@ body {
 
 
   #bombsJumped {  
+    
     display: inline;
     flex-direction: column;
     justify-content: center;
@@ -130,14 +131,17 @@ body {
     width: 100px;      
     height: 50px;
     border: 1px solid black;  
-    background-color: aliceblue;
+    background-color: rgb(245, 245, 220);
     font-family: VT323;
     font-size: 10px;  
     margin-left: 35px;
     margin-right: 35px;
+    margin-top: -60px;
+    
   }
 
   #terrorKilled {
+   
     display: inline;
     flex-direction: column;
     justify-content: center;
@@ -148,11 +152,12 @@ body {
     width: 100px;      
     height: 50px;
     border: 1px solid black;  
-    background-color: aliceblue;
+    background-color: rgb(245, 245, 220);
     font-family: VT323;
     font-size: 10px;  
     margin-left: 35px;
     margin-right: 35px;
+    margin-top: -60px;
   }
 
   #dineroGanado {
@@ -167,11 +172,12 @@ body {
     width: 100px;      
     height: 50px;
     border: 1px solid black;  
-    background-color: aliceblue;
+    background-color: rgb(245, 245, 220);
     font-family: VT323;
     font-size: 10px;  
     margin-left: 35px;
     margin-right: 35px;
+    margin-top: -60px;
   }
 
   #tanqueKilled {
@@ -186,11 +192,12 @@ body {
     width: 100px;      
     height: 50px;
     border: 1px solid black;  
-    background-color: aliceblue;
+    background-color: rgb(245, 245, 220);
     font-family: VT323;
     font-size: 10px;  
     margin-left: 35px;
     margin-right: 35px;
+    margin-top: -60px;
   }
   
   #instrucciones {      
@@ -200,7 +207,7 @@ body {
     flex-direction: column;   
     align-content: center;
     align-items: center;
-    margin-top: 85px;   
+    margin-top: 80px;   
     
   }
 
@@ -214,6 +221,7 @@ body {
     font-family: VT323;
     font-size: 50px;  
     background-color: aliceblue;
+    margin-top: 15px;
     
   }
 
@@ -226,3 +234,30 @@ body {
     margin-left: 30px;
   }
 
+  /* #nombreintro {
+    font-family: VT323;
+    font-size: 19px;  
+    background-color: aliceblue;
+    margin-top: -30px;
+    margin-bottom: 50px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 5px;
+    
+  }
+
+  #cajainput {
+    margin-bottom: 5px;
+    font-family: VT323;
+    font-size: 20px;
+  }
+
+  #boton {
+    margin-right: 5px;
+    font-family: VT323;
+    font-size: 20px;
+    
+  }
+   */
+
+  
