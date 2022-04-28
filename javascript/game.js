@@ -26,6 +26,8 @@ class Game {
     this.countTanque = 1;
     this.maxTanques = 2;
     this.countDeadTanques = 0;
+
+    this.segundoImpacto = false;
   }
 
   //-----AÑADIR/QUITAR ELEMENTOS
@@ -74,7 +76,7 @@ class Game {
 
   //TANQUES
   addNewTanques = () => {
-    if (this.countTanque < this.maxTanques || this.countTanque.length === 0) {
+    if (this.countTanque < this.maxTanques || this.tanqueArr.length === 0) {
       let newTanque = new Tanque(canvas.width + 500);
       this.tanqueArr.push(newTanque);
       this.countTanque++;
@@ -179,26 +181,36 @@ class Game {
     });
   };
 
+
   balaTanqueCollision = () => {
     this.balaArr.forEach((eachBala, ib) => {
       this.tanqueArr.forEach((eachTanque, it) => {
-        if (
+        if (this.segundoImpacto === false && 
           eachBala.x < eachTanque.x + eachTanque.w &&
           eachBala.x + eachBala.w > eachTanque.x &&
           eachBala.y < eachTanque.y + eachTanque.h &&
-          eachBala.h + eachBala.y > eachTanque.y
-        ) {
-          // bala y tanque desaparezcan
-          this.balaArr.splice(ib, 1); // remover la bala del array
-          this.tanqueArr.splice(it, 1); //remover el tanque del array
-          this.maxTanques--; // restar el contador de tanques activos in game
-          this.countBalas--; // restar el contador de balas in game
-          this.countDeadTanques++; //contar los tanques muertos
-          this.contadorScore = this.contadorScore + 100;
-        }
-      });
-    });
-  };
+          eachBala.h + eachBala.y > eachTanque.y) {
+            this.balaArr.splice(ib, 1); // remover la bala del array
+            this.segundoImpacto = true
+            this.countBalas--; // restar el contador de balas in game 
+          } else if (this.segundoImpacto === true && 
+            eachBala.x < eachTanque.x + eachTanque.w &&
+            eachBala.x + eachBala.w > eachTanque.x &&
+            eachBala.y < eachTanque.y + eachTanque.h &&
+            eachBala.h + eachBala.y > eachTanque.y) {
+              this.balaArr.splice(ib, 1);
+              this.tanqueArr.splice(it, 1); //remover el tanque del array
+              this.segundoImpacto = false;
+              this.countBalas--; // restar el contador de balas in game
+              this.countTanques--; // restar el contador de tanques activos in game
+              this.countDeadTanques++; //contar los tanques muertos
+              this.contadorScore = this.contadorScore + 100;
+            }
+      })
+    })
+  }
+
+
 
   //-------GAMELOOP---------------//
 

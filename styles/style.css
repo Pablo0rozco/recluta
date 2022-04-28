@@ -97,6 +97,17 @@ body {
     align-items: center;
     margin: 50px;
   }
+
+  #containerCounters {
+    margin-top: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    position: absolute;
+    
+
+  }
   
   #my-canvas, #gameover-screen {
     display: none;    
@@ -117,6 +128,8 @@ body {
     background-color: aliceblue;
     font-family: VT323;
     font-size: 10px;  
+    margin-left: 35px;
+    margin-right: 35px;
   }
 
   #terrorKilled {
@@ -133,6 +146,8 @@ body {
     background-color: aliceblue;
     font-family: VT323;
     font-size: 10px;  
+    margin-left: 35px;
+    margin-right: 35px;
   }
 
   #dineroGanado {
@@ -150,6 +165,8 @@ body {
     background-color: aliceblue;
     font-family: VT323;
     font-size: 10px;  
+    margin-left: 35px;
+    margin-right: 35px;
   }
 
   #tanqueKilled {
@@ -167,4 +184,6 @@ body {
     background-color: aliceblue;
     font-family: VT323;
     font-size: 10px;  
+    margin-left: 35px;
+    margin-right: 35px;
   }

@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RECLUTA</title>
-  <link rel="stylesheet" href="./styles/style.css">
-</head>
-<body background="./images/fondogrande.png">
-
-
-  <!-- <div id="audioInicio">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RECLUTA</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body background="./images/fondogrande.png">
+    <!-- <div id="audioInicio">
     <audio src="../sounds/cornetaInicio"></audio>
   </div> -->
-    
 
-  <div class="container">
+    <div class="container">
+      <!-- SPLASH SCREEN -->
+      <div id="splash-screen" class="container">
+        <img src="./images/logo1.png" width="616" height="306" alt="logo" />
+        <button id="start-btn">START</button>
+      </div>
 
-    <!-- SPLASH SCREEN -->
-    <div id="splash-screen" class="container">
-      <img src="./images/logo1.png" width="616" height="306" alt="logo">
-      <button id="start-btn">START</button>
+      <!-- GAME SCREEN -->
+      <canvas id="my-canvas" width="612" height="306"></canvas>
+
+      <!-- GAME OVER SCREEN -->
+      <div id="gameover-screen" class="container">
+        <img
+          src="./images/gameover.png"
+          width="616"
+          height="306"
+          alt="gameover"
+        />
+        <button id="restart-btn">PLAY AGAIN</button>
+      </div>
+
+      <div id="containerCounters">
+        <!-- CONTADOR BOMBAS -->
+        <div id="bombsJumped">
+          <h2>JUMPED BOMBS<br /><span id="contador-bombas-saltadas"></span></h2>
+        </div>
+
+        <!-- CONTADOR TERRORISTAS MUERTOS -->
+        <div id="terrorKilled">
+          <h2>
+            DEAD TERRORISTS<br /><span id="contador-terroristas-muertos"></span>
+          </h2>
+        </div>
+
+        <!-- CONTADOR TANQUES -->
+        <div id="tanqueKilled">
+          <h2>
+            DESTROYED TANKS<br />
+            <span id="contador-tanques-destruidos"></span>
+          </h2>
+        </div>
+
+        <!-- CONTADOR SCORE -->
+        <div id="dineroGanado">
+          <h2>
+            EARNED MONEY<br />
+            <span id="contador-dinero-ganado"></span>
+          </h2>
+        </div>
+      </div>
+
+      
     </div>
-    
-    <!-- GAME SCREEN -->
-    <canvas id="my-canvas" width="612" height="306"></canvas>
 
-
-    <!-- CONTADOR BOMBAS -->
-    <div id="bombsJumped">  
-      <h2>JUMPED BOMBS<br><span id="contador-bombas-saltadas"></span></h2>         
-    </div>
-
-    <!-- CONTADOR TERRORISTAS MUERTOS -->
-    <div id="terrorKilled">  
-      <h2>DEAD TERRORISTS<br><span id="contador-terroristas-muertos"></span></h2>         
-    </div>
-
-    <!-- CONTADOR TANQUES -->
-    <div id="tanqueKilled">  
-      <h2>DESTROYED TANKS<br> <span id="contador-tanques-destruidos"></span></h2>         
-    </div>
-
-    
-    <!-- CONTADOR SCORE -->
-    <div id="dineroGanado">  
-      <h2>EARNED MONEY<br> <span id="contador-dinero-ganado"></span></h2>         
-    </div>
-
-    
-    <!-- GAME OVER SCREEN -->
-    <div id="gameover-screen" class="container">
-      <img src="./images/gameover.png" width="616" height="306" alt="gameover">
-      <button id="restart-btn">PLAY AGAIN</button>
-    </div>
-
-  </div>
-
-  <script src="./javascript/main.js"></script>
-  <script src="./javascript/game.js"></script>
-  <script src="./javascript/recluta.js"></script>
-  <script src="./javascript/terrorista.js"></script>
-  <script src="./javascript/bomb.js"></script> 
-  <script src="./javascript/bala.js"></script>
-  <script src="./javascript/tanque.js"></script>
-</body>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/game.js"></script>
+    <script src="./javascript/recluta.js"></script>
+    <script src="./javascript/terrorista.js"></script>
+    <script src="./javascript/bomb.js"></script>
+    <script src="./javascript/bala.js"></script>
+    <script src="./javascript/tanque.js"></script>
+  </body>
 </html>
