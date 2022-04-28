@@ -1,5 +1,7 @@
 //------------- // * GLOBAL VARIABLES
-
+const cajaInput = document.querySelector("#cajainput");
+const buton = document.querySelector("#boton-alistarse");
+const spanRecluta = document.querySelector("#reclutaPalabra")
 const startBtn = document.querySelector("#start-btn"); // acceder botón START--->DOM
 const restartBtn = document.querySelector("#restart-btn");
 const startScreen = document.querySelector("#splash-screen");
@@ -50,3 +52,16 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("keydown", (event) => {
   game.recluta.moveLeft(event);
 });
+
+
+
+
+buton.addEventListener("click", () => {
+  let nombreIntroducido = cajaInput.value
+  spanRecluta.innerText = nombreIntroducido  
+});
+
+
+
+
+

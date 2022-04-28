@@ -1,6 +1,5 @@
 class Game {
   constructor() {
-    // this.playerName = ""
     this.isGameOn = true; // booleano para apagar encender juego
     this.bg = new Image();
     this.bg.src = "./images/background.jpg";
@@ -288,7 +287,8 @@ class Game {
     document.getElementById("contador-bombas-saltadas").innerHTML =
       this.bombJumped;
     document.getElementById("contador-tanques-destruidos").innerHTML = this.countDeadTanques;
-    // document.getElementById("cajainput").innerHTML = this.playerName;
+    document.getElementById("cajainput").innerHTML = this.playerName;
+    
 
     // COLISIONES
     this.gameOverBombCollision();
