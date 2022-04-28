@@ -110,7 +110,12 @@ body {
   }
   
   #my-canvas, #gameover-screen {
-    display: none;    
+    display: none;  
+    
+  }
+
+  #my-canvas {
+    margin-bottom: 50px;
   }
 
 
@@ -187,3 +192,54 @@ body {
     margin-left: 35px;
     margin-right: 35px;
   }
+
+  /* #instrucciones {
+    display: inline;
+    position: center; 
+    flex-direction: row;    
+    text-align: center;    
+    font-family: VT323;
+    font-size: 30px;  
+    margin-left: 35px;
+    padding-left: 100px;
+    justify-content: ;
+
+    
+  } */
+
+  
+  #instrucciones {      
+    font-family: VT323;
+    font-size: 20px;  
+    display: flex;
+    flex-direction: column;   
+    align-content: center;
+    align-items: center;
+    margin-top: 85px;   
+    
+  }
+
+  #instrucciones p {
+    font-weight: bold;
+    margin-top: -35px;  
+    line-height: 30px;  
+    margin-left: 130px;
+    
+  }
+
+  #bienvenido {
+    font-family: VT323;
+    font-size: 50px;  
+    background-color: aliceblue;
+    
+  }
+
+  #instrucciones span {
+    background-color: aliceblue;
+    
+  }
+
+  #intro {
+    margin-left: 30px;
+  }
+
